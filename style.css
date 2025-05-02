@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    background: #f5f5dc; /* Beige */
+    font-family: 'Orbitron', sans-serif;
+    cursor: url('assets/img/scope.png') 16 16, auto;
+    overflow: hidden;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#hud, #gameOver {
+    color: white;
+}
+
+#topContainer {
+    position: relative;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    background: #4682b4; /* Steel Blue */
+    padding: 10px 0;
+    border: 1px solid #1ddb56;
+}
+
+#centerContainer {
+    margin: 30px auto;
+    width: 95%;
+    max-width: 1200px;
+    height: calc(100vh - 130px);
+    border-radius: 15px;
+    border: 1px solid #e2e2e2;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafad2; /* Light Goldenrod Yellow */
+    box-sizing: border-box;
+}
+
+#hud {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-size: 18px;
+    gap: 15px;
+    border: 1px solid #bbd3e0;
+}
+
+#highScore, #timer, #killCount {
+    padding: 5px 10px;
+    border: 1px solid #00008b;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+#highScore {
+    position: absolute;
+    left: 10px;
+}
+
+#muteBtn {
+    position: absolute;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #4682b4; /* Steel Blue */
+    color: white;
+    border: 1px solid #7bfc5b;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#timer, #killCount {
+    margin: 0 15px;
+    text-align: center;
+}
+
+#hud span {
+    margin-right: 15px;
+}
+
+#gameArea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fafad2; /* Light Goldenrod Yellow */
+    box-sizing: border-box;
+    border: 1px solid #ebebeb;
+}
+
+.cockroach {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.2s;
+    cursor: url('assets/img/scope.png') 16 16, auto;
+    border: 1px solid #00008b;
+}
+
+.cockroach.dead {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#startBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    background: #4682b4; /* Steel Blue */
+    color: white;
+    border: 1px solid #00008b;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#gameOver {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1000;
+    border: 1px solid #00008b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#gameOver button {
+    background: #4682b4; /* Steel Blue */
+    color: white;
+    border: 1px solid #00008b;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#hud, #gameOver, #highScore, #timer, #killCount, #muteBtn, #startBtn, #gameOver button {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#gameOver h1 {
+    font-size: 18px;
+}
+
+#gameTitle {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: 'Orbitron', sans-serif;
+    margin: 20px 0;
+    padding: 10px 0;
+    background: #4682b4; /* Steel Blue */
+    border: 1px solid #68ee85;
+}
+
+@media (max-width: 768px) {
+    #topContainer {
+        padding: 10px 2%;
+    }
+
+    #centerContainer {
+        margin: 20px auto;
+        width: 90%;
+        height: calc(100vh - 150px);
+    }
+
+    #hud {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #highScore, #timer, #killCount {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    #muteBtn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #startBtn {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    #gameOver {
+        width: 95%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    #gameOver button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #gameOver h1 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hud {
+        font-size: 12px;
+    }
+
+    #highScore, #timer, #killCount {
+        font-size: 10px;
+    }
+
+    #muteBtn, #startBtn, #gameOver button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #gameOver {
+        max-width: 300px;
+    }
+}
